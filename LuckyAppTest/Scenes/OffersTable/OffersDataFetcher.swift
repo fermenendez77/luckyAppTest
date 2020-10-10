@@ -9,7 +9,7 @@ import Foundation
 
 protocol OffersDataFetcherDelegate : class {
     
-    func successRequest(with : [Section], title : String)
+    func successRequest(sections: [Section], title : String)
     func error(_ error : ErrorData)
 }
 
@@ -31,7 +31,7 @@ class OffersDataFetcherImp : OffersDataFetcher {
                                method: .GET,
                                returnType: OffersResponse.self,
                                completionHandler: { [weak self] response in
-                                self?.delegate?.successRequest(with: response.sections,
+                                self?.delegate?.successRequest(sections: response.sections,
                                                                title: response.title)
                                },
                                errorHandler: {[weak self] error in

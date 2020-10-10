@@ -10,13 +10,16 @@ import Foundation
 protocol OffersPresenter {
     
     init(view : OffersView, dataFetcher : OffersDataFetcherImp)
+    
     func viewDidLoad()
     func offerSelected(at indexPath : IndexPath)
+    func configure(cell : OfferTableViewCell, at indexPath : IndexPath)
+    
     var sections : [Section] {get set}
 }
 
 class OffersPresenterImp : OffersPresenter {
-   
+    
     weak var view : OffersView?
     let dataFetcher : OffersDataFetcher
     
@@ -36,12 +39,22 @@ class OffersPresenterImp : OffersPresenter {
         
     }
     
+    func configure(cell: OfferTableViewCell, at indexPath: IndexPath) {
+        let offer = sections[indexPath.section].items[indexPath.row]
+        cell.configure(title: offer.title)
+        cell.configure(brand: offer.brand)
+        cell.configure(favCount: offer.favoriteCount)
+        cell.configure(tags: offer.tags)
+    }
+    
 }
 
 extension OffersPresenterImp : OffersDataFetcherDelegate {
     
-    func successRequest(with: [Section], title: String) {
-        
+    func successRequest(sections: [Section], title: String) {
+        self.sections = sections
+        view?.configure(title: title)
+        view?.showData()
     }
     
     func error(_ error: ErrorData) {
