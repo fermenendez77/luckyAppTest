@@ -12,7 +12,7 @@ protocol OffersView : class {
     func showData()
     func showLoading()
     func hideLoading()
-    func offerSelected()
+    func presentDetailScene(with offer : Offer)
     func configure(title : String)
     func reloadCell(at indexPath : IndexPath)
 }
@@ -46,6 +46,12 @@ class OffersTableViewController: UIViewController {
 
 extension OffersTableViewController : OffersView {
     
+    func presentDetailScene(with offer : Offer) {
+        let offerDetailVC = OfferDetailViewController()
+        navigationController?.pushViewController(offerDetailVC, animated: true)
+    }
+    
+    
     func configure(title: String) {
         self.title = title
     }
@@ -75,6 +81,11 @@ extension OffersTableViewController : UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 114.0
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        presenter?.offerSelected(at: indexPath)
+        tableView.deselectRow(at: indexPath, animated: false)
     }
 }
 
@@ -109,7 +120,7 @@ extension OffersTableViewController : UITableViewDataSource {
     
     func tableView(_ tableView: UITableView,
                    heightForHeaderInSection section: Int) -> CGFloat {
-        return 110.0
+        return 104.0
     }
 }
 

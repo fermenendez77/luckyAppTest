@@ -41,7 +41,8 @@ class OffersPresenterImp : OffersPresenter {
     }
     
     func offerSelected(at indexPath: IndexPath) {
-        
+        let offerSelected = sections[indexPath.section].items[indexPath.row]
+        view?.presentDetailScene(with: offerSelected)
     }
     
     func configure(cell: OfferTableViewCell, at indexPath: IndexPath) {

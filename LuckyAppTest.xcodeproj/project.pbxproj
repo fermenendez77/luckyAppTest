@@ -21,6 +21,9 @@
 		139B4FA325322DD900A822DF /* OffersDataFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 139B4FA225322DD900A822DF /* OffersDataFetcher.swift */; };
 		13E3649625327BCC00C46BD8 /* OfferHeaderTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13E3649525327BCC00C46BD8 /* OfferHeaderTableView.swift */; };
 		13E3649D253288F900C46BD8 /* ImageDownloaderOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13E3649C253288F900C46BD8 /* ImageDownloaderOperation.swift */; };
+		13E364A2253291BA00C46BD8 /* OfferDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13E364A0253291BA00C46BD8 /* OfferDetailViewController.swift */; };
+		13E364A3253291BA00C46BD8 /* OfferDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 13E364A1253291BA00C46BD8 /* OfferDetailViewController.xib */; };
+		13E364A72533623900C46BD8 /* OfferDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13E364A62533623800C46BD8 /* OfferDetail.swift */; };
 		13F45CC32532484F00C0F72A /* OfferTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13F45CC12532484F00C0F72A /* OfferTableViewCell.swift */; };
 		13F45CC42532484F00C0F72A /* OfferTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 13F45CC22532484F00C0F72A /* OfferTableViewCell.xib */; };
 /* End PBXBuildFile section */
@@ -42,6 +45,9 @@
 		139B4FA225322DD900A822DF /* OffersDataFetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OffersDataFetcher.swift; sourceTree = "<group>"; };
 		13E3649525327BCC00C46BD8 /* OfferHeaderTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OfferHeaderTableView.swift; sourceTree = "<group>"; };
 		13E3649C253288F900C46BD8 /* ImageDownloaderOperation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageDownloaderOperation.swift; sourceTree = "<group>"; };
+		13E364A0253291BA00C46BD8 /* OfferDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OfferDetailViewController.swift; sourceTree = "<group>"; };
+		13E364A1253291BA00C46BD8 /* OfferDetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OfferDetailViewController.xib; sourceTree = "<group>"; };
+		13E364A62533623800C46BD8 /* OfferDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OfferDetail.swift; sourceTree = "<group>"; };
 		13F45CC12532484F00C0F72A /* OfferTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OfferTableViewCell.swift; sourceTree = "<group>"; };
 		13F45CC22532484F00C0F72A /* OfferTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OfferTableViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -91,6 +97,7 @@
 		139B4F8A2532290B00A822DF /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				13E3649F2532918F00C46BD8 /* OfferDetail */,
 				139B4F9D25322BE200A822DF /* OffersTable */,
 			);
 			path = Scenes;
@@ -128,6 +135,7 @@
 			children = (
 				139B4F9625322AC400A822DF /* Section.swift */,
 				139B4F9A25322AE700A822DF /* Offer.swift */,
+				13E364A62533623800C46BD8 /* OfferDetail.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -151,6 +159,15 @@
 				13E3649525327BCC00C46BD8 /* OfferHeaderTableView.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		13E3649F2532918F00C46BD8 /* OfferDetail */ = {
+			isa = PBXGroup;
+			children = (
+				13E364A0253291BA00C46BD8 /* OfferDetailViewController.swift */,
+				13E364A1253291BA00C46BD8 /* OfferDetailViewController.xib */,
+			);
+			path = OfferDetail;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -214,6 +231,7 @@
 				139B4F82253228C800A822DF /* LaunchScreen.storyboard in Resources */,
 				139B4F7F253228C800A822DF /* Assets.xcassets in Resources */,
 				139B4F7D253228C400A822DF /* Main.storyboard in Resources */,
+				13E364A3253291BA00C46BD8 /* OfferDetailViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -229,7 +247,9 @@
 				139B4F9B25322AE700A822DF /* Offer.swift in Sources */,
 				139B4F8E2532298C00A822DF /* RestClientService.swift in Sources */,
 				139B4F9225322A7A00A822DF /* OffersResponse.swift in Sources */,
+				13E364A72533623900C46BD8 /* OfferDetail.swift in Sources */,
 				139B4F7A253228C400A822DF /* OffersTableViewController.swift in Sources */,
+				13E364A2253291BA00C46BD8 /* OfferDetailViewController.swift in Sources */,
 				139B4F9725322AC400A822DF /* Section.swift in Sources */,
 				13F45CC32532484F00C0F72A /* OfferTableViewCell.swift in Sources */,
 				13E3649D253288F900C46BD8 /* ImageDownloaderOperation.swift in Sources */,
