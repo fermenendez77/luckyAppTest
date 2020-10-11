@@ -54,7 +54,7 @@ class OfferDetailViewController: UIViewControllerDialogBehaviours {
         
         self.navigationItem.rightBarButtonItems = [shareButton, favsButton]
         
-        navigationController?.navigationBar.tintColor = .black
+        navigationController?.navigationBar.tintColor = .label
     }
     
     @objc func favsButtonPressed() {

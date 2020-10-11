@@ -22,8 +22,8 @@ class OfferHeaderTableView : UITableViewHeaderFooterView {
     }
     
     func configureContents() {
-        contentView.backgroundColor = .white
-        titleLabel.textColor = .black
+        contentView.backgroundColor = .systemBackground
+        titleLabel.textColor = .label
         titleLabel.font = titleLabel.font.withSize(24)
         titleLabel.translatesAutoresizingMaskIntoConstraints = false
         contentView.addSubview(titleLabel)
