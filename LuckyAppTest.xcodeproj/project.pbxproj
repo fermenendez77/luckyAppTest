@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		138D6BC225339C2A0013DC70 /* UIViewController+Dialogs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 138D6BC125339C2A0013DC70 /* UIViewController+Dialogs.swift */; };
 		139B4F76253228C400A822DF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 139B4F75253228C400A822DF /* AppDelegate.swift */; };
 		139B4F78253228C400A822DF /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 139B4F77253228C400A822DF /* SceneDelegate.swift */; };
 		139B4F7A253228C400A822DF /* OffersTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 139B4F79253228C400A822DF /* OffersTableViewController.swift */; };
@@ -31,6 +32,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		138D6BC125339C2A0013DC70 /* UIViewController+Dialogs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Dialogs.swift"; sourceTree = "<group>"; };
 		139B4F72253228C400A822DF /* LuckyAppTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LuckyAppTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		139B4F75253228C400A822DF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		139B4F77253228C400A822DF /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -122,6 +124,7 @@
 			children = (
 				139B4F75253228C400A822DF /* AppDelegate.swift */,
 				139B4F77253228C400A822DF /* SceneDelegate.swift */,
+				138D6BC125339C2A0013DC70 /* UIViewController+Dialogs.swift */,
 			);
 			path = App;
 			sourceTree = "<group>";
@@ -258,6 +261,7 @@
 				13E364AD2533675F00C46BD8 /* OfferDetailDataFetcher.swift in Sources */,
 				139B4F7A253228C400A822DF /* OffersTableViewController.swift in Sources */,
 				13E364A2253291BA00C46BD8 /* OfferDetailViewController.swift in Sources */,
+				138D6BC225339C2A0013DC70 /* UIViewController+Dialogs.swift in Sources */,
 				139B4F9725322AC400A822DF /* Section.swift in Sources */,
 				13F45CC32532484F00C0F72A /* OfferTableViewCell.swift in Sources */,
 				13E3649D253288F900C46BD8 /* ImageDownloaderOperation.swift in Sources */,

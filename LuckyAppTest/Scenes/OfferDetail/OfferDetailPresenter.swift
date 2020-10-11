@@ -30,6 +30,7 @@ class OfferDetailPresenterImp : OfferDetailPresenter {
     
     
     func viewDidLoad() {
+        view?.showLoading()
         dataFetcher.fetchOfferDetail()
     }
     
@@ -55,6 +56,7 @@ class OfferDetailPresenterImp : OfferDetailPresenter {
             }
         }
         imageQueue.addOperation(imageOperation)
+        view?.hideLoading()
     }
 }
 
@@ -66,7 +68,8 @@ extension OfferDetailPresenterImp : OffersDetailFetcherDelegate {
     }
     
     func error(error: ErrorData) {
-        
+        view?.hideLoading()
+        view?.showError()
     }
     
 }

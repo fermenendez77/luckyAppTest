@@ -9,6 +9,9 @@ import UIKit
 
 protocol OfferDetailView : class {
     
+    func showLoading()
+    func hideLoading()
+    func showError()
     func configure(offerImage : UIImage?)
     func configure(brand : String?)
     func configure(favsCounter : Int?)
@@ -20,7 +23,7 @@ protocol OfferDetailView : class {
     func configure(redeptionCap : String?)
 }
 
-class OfferDetailViewController: UIViewController {
+class OfferDetailViewController: UIViewControllerDialogBehaviours {
 
     @IBOutlet weak var offerImageView: UIImageView!
     @IBOutlet weak var likesLabel: UILabel!
@@ -64,6 +67,23 @@ class OfferDetailViewController: UIViewController {
 }
 
 extension OfferDetailViewController : OfferDetailView {
+    
+    func showError() {
+        onErrorMessageClosed = { [weak self] in
+            self?.navigationController?.dismiss(animated: true, completion: nil)
+        }
+        present(errorAlert, animated: true, completion: {})
+    }
+    
+    
+    func showLoading() {
+        present(fetchingDataAlert, animated: true, completion: nil)
+    }
+    
+    func hideLoading() {
+        fetchingDataAlert.dismiss(animated: true, completion: nil)
+    }
+    
     
     func configure(offerImage: UIImage?) {
         let image = offerImage ?? UIImage(named: "image-placeholder")

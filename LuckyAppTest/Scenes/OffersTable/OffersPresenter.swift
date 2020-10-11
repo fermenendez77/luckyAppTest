@@ -37,6 +37,7 @@ class OffersPresenterImp : OffersPresenter {
     }
     
     func viewDidLoad() {
+        view?.showLoading()
         dataFetcher.fetchOffers()
     }
     
@@ -88,10 +89,13 @@ extension OffersPresenterImp : OffersDataFetcherDelegate {
         self.sections = sections
         view?.configure(title: title)
         view?.showData()
+        view?.hideLoading()
     }
     
     func error(_ error: ErrorData) {
-        
+        //We could make a switch case error in order to set a correct msg
+        view?.hideLoading()
+        view?.showErrorAlert()
     }
     
     

@@ -9,6 +9,7 @@ import UIKit
 
 protocol OffersView : class {
     
+    func showErrorAlert()
     func showData()
     func showLoading()
     func hideLoading()
@@ -17,7 +18,7 @@ protocol OffersView : class {
     func reloadCell(at indexPath : IndexPath)
 }
 
-class OffersTableViewController: UIViewController {
+class OffersTableViewController: UIViewControllerDialogBehaviours {
     
     var presenter : OffersPresenter?
     
@@ -46,6 +47,16 @@ class OffersTableViewController: UIViewController {
 
 extension OffersTableViewController : OffersView {
     
+    func showErrorAlert() {
+        func showError() {
+            onErrorMessageClosed = { [weak self] in
+                self?.navigationController?.dismiss(animated: true, completion: nil)
+            }
+            present(errorAlert, animated: true, completion: {})
+        }
+    }
+    
+    
     func presentDetailScene(with dataFetcher : OfferDetailDataFetcher) {
         let offerDetailVC = OfferDetailViewController()
         let presenter = OfferDetailPresenterImp(view: offerDetailVC, dataFetcher: dataFetcher)
@@ -63,11 +74,11 @@ extension OffersTableViewController : OffersView {
     }
     
     func showLoading() {
-            
+        present(fetchingDataAlert, animated: true, completion: nil)
     }
     
     func hideLoading() {
-            
+        fetchingDataAlert.dismiss(animated: true, completion: nil)
     }
     
     func reloadCell(at indexPath : IndexPath) {
