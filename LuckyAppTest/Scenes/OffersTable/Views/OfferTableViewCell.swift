@@ -11,7 +11,8 @@ class OfferTableViewCell: UITableViewCell {
 
     @IBOutlet weak var mainImageView: UIImageView! {
         didSet {
-            mainImageView.layer.cornerRadius = 3.0
+            mainImageView.layer.cornerRadius = 10.0
+            mainImageView.image = UIImage(named: "image-placeholder")
         }
     }
     @IBOutlet weak var brandLabel: UILabel!
@@ -47,5 +48,9 @@ class OfferTableViewCell: UITableViewCell {
         } else {
             tagsLabel.isHidden = true
         }
+    }
+    
+    func configure(image : UIImage) {
+        mainImageView.image = image
     }
 }

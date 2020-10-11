@@ -20,6 +20,7 @@
 		139B4FA025322D0200A822DF /* OffersPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 139B4F9F25322D0200A822DF /* OffersPresenter.swift */; };
 		139B4FA325322DD900A822DF /* OffersDataFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 139B4FA225322DD900A822DF /* OffersDataFetcher.swift */; };
 		13E3649625327BCC00C46BD8 /* OfferHeaderTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13E3649525327BCC00C46BD8 /* OfferHeaderTableView.swift */; };
+		13E3649D253288F900C46BD8 /* ImageDownloaderOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13E3649C253288F900C46BD8 /* ImageDownloaderOperation.swift */; };
 		13F45CC32532484F00C0F72A /* OfferTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13F45CC12532484F00C0F72A /* OfferTableViewCell.swift */; };
 		13F45CC42532484F00C0F72A /* OfferTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 13F45CC22532484F00C0F72A /* OfferTableViewCell.xib */; };
 /* End PBXBuildFile section */
@@ -40,6 +41,7 @@
 		139B4F9F25322D0200A822DF /* OffersPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OffersPresenter.swift; sourceTree = "<group>"; };
 		139B4FA225322DD900A822DF /* OffersDataFetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OffersDataFetcher.swift; sourceTree = "<group>"; };
 		13E3649525327BCC00C46BD8 /* OfferHeaderTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OfferHeaderTableView.swift; sourceTree = "<group>"; };
+		13E3649C253288F900C46BD8 /* ImageDownloaderOperation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageDownloaderOperation.swift; sourceTree = "<group>"; };
 		13F45CC12532484F00C0F72A /* OfferTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OfferTableViewCell.swift; sourceTree = "<group>"; };
 		13F45CC22532484F00C0F72A /* OfferTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OfferTableViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -99,6 +101,7 @@
 			children = (
 				139B4F9025322A5700A822DF /* ResponseObjects */,
 				139B4F8D2532298C00A822DF /* RestClientService.swift */,
+				13E3649C253288F900C46BD8 /* ImageDownloaderOperation.swift */,
 			);
 			path = Networking;
 			sourceTree = "<group>";
@@ -229,6 +232,7 @@
 				139B4F7A253228C400A822DF /* OffersTableViewController.swift in Sources */,
 				139B4F9725322AC400A822DF /* Section.swift in Sources */,
 				13F45CC32532484F00C0F72A /* OfferTableViewCell.swift in Sources */,
+				13E3649D253288F900C46BD8 /* ImageDownloaderOperation.swift in Sources */,
 				139B4FA025322D0200A822DF /* OffersPresenter.swift in Sources */,
 				139B4F76253228C400A822DF /* AppDelegate.swift in Sources */,
 				139B4F78253228C400A822DF /* SceneDelegate.swift in Sources */,

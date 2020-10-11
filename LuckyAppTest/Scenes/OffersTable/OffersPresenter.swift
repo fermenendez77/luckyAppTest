@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import UIKit.UIImage
 
 protocol OffersPresenter {
     
@@ -24,6 +25,10 @@ class OffersPresenterImp : OffersPresenter {
     let dataFetcher : OffersDataFetcher
     
     var sections: [Section] = []
+    
+    var imageQueue : OperationQueue = OperationQueue()
+    internal var images : [IndexPath : UIImage] = [:]
+    internal var pendingImagesOperations : [IndexPath : ImageDownloaderOperation] = [:]
     
     required init(view: OffersView, dataFetcher: OffersDataFetcherImp = OffersDataFetcherImp()) {
         self.view = view
@@ -45,6 +50,27 @@ class OffersPresenterImp : OffersPresenter {
         cell.configure(brand: offer.brand)
         cell.configure(favCount: offer.favoriteCount)
         cell.configure(tags: offer.tags)
+        if let image = images[indexPath] {
+            //cell.hideLoader()
+            cell.configure(image: image)
+        } else {
+            guard pendingImagesOperations[indexPath] == nil else {
+                return
+            }
+            //cell.showLoader()
+            let operation = ImageDownloaderOperation(withURL: URL(string: offer.imageURL)!)
+            operation.completionBlock = { [weak self] in
+                if let image = operation.image {
+                    DispatchQueue.main.async {
+                        self?.images[indexPath] = image
+                        self?.pendingImagesOperations.removeValue(forKey: indexPath)
+                        self?.view?.reloadCell(at: indexPath)
+                    }
+                }
+            }
+            pendingImagesOperations[indexPath] = operation
+            imageQueue.addOperation(operation)
+        }
     }
     
     func configure(header: OfferHeaderTableView, in section: Int) {

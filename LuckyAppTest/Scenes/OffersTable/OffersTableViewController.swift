@@ -14,6 +14,7 @@ protocol OffersView : class {
     func hideLoading()
     func offerSelected()
     func configure(title : String)
+    func reloadCell(at indexPath : IndexPath)
 }
 
 class OffersTableViewController: UIViewController {
@@ -63,6 +64,10 @@ extension OffersTableViewController : OffersView {
     
     func offerSelected() {
         
+    }
+    
+    func reloadCell(at indexPath : IndexPath) {
+        tableView.reloadRows(at: [indexPath], with: .automatic)
     }
 }
 
