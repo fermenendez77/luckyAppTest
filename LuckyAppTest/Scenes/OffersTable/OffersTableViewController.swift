@@ -12,7 +12,7 @@ protocol OffersView : class {
     func showData()
     func showLoading()
     func hideLoading()
-    func presentDetailScene(with offer : Offer)
+    func presentDetailScene(with dataFetcher : OfferDetailDataFetcher)
     func configure(title : String)
     func reloadCell(at indexPath : IndexPath)
 }
@@ -46,8 +46,10 @@ class OffersTableViewController: UIViewController {
 
 extension OffersTableViewController : OffersView {
     
-    func presentDetailScene(with offer : Offer) {
+    func presentDetailScene(with dataFetcher : OfferDetailDataFetcher) {
         let offerDetailVC = OfferDetailViewController()
+        let presenter = OfferDetailPresenterImp(view: offerDetailVC, dataFetcher: dataFetcher)
+        offerDetailVC.presenter = presenter
         navigationController?.pushViewController(offerDetailVC, animated: true)
     }
     
@@ -66,10 +68,6 @@ extension OffersTableViewController : OffersView {
     
     func hideLoading() {
             
-    }
-    
-    func offerSelected() {
-        
     }
     
     func reloadCell(at indexPath : IndexPath) {

@@ -33,7 +33,7 @@
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ncc-cU-Dzm" userLabel="contentView">
                             <rect key="frame" x="0.0" y="0.0" width="414" height="800"/>
                             <subviews>
-                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="bKx-p1-Cq6">
+                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="image-placeholder" translatesAutoresizingMaskIntoConstraints="NO" id="bKx-p1-Cq6">
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="250"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="250" id="oVg-Aa-PgT"/>
@@ -103,7 +103,6 @@
                                 <constraint firstItem="Q9u-Lj-bzm" firstAttribute="leading" secondItem="Ncc-cU-Dzm" secondAttribute="leading" constant="24" id="AJh-6d-zc6"/>
                                 <constraint firstItem="bKx-p1-Cq6" firstAttribute="top" secondItem="Ncc-cU-Dzm" secondAttribute="top" id="AOb-z4-BNZ"/>
                                 <constraint firstItem="9wV-ZV-xbf" firstAttribute="top" secondItem="2yx-ny-Dyb" secondAttribute="bottom" constant="48" id="CCs-Ii-JwX"/>
-                                <constraint firstAttribute="height" constant="800" id="FOL-WG-a9Z"/>
                                 <constraint firstItem="bKx-p1-Cq6" firstAttribute="leading" secondItem="Ncc-cU-Dzm" secondAttribute="leading" id="Hvb-o4-HM6"/>
                                 <constraint firstItem="9wV-ZV-xbf" firstAttribute="leading" secondItem="Ncc-cU-Dzm" secondAttribute="leading" constant="24" id="JG9-NC-VOa"/>
                                 <constraint firstItem="0sw-8x-2dc" firstAttribute="top" secondItem="X5V-Td-vch" secondAttribute="bottom" constant="49" id="JPF-wp-5qS"/>
@@ -136,6 +135,7 @@
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
+                <constraint firstItem="Ncc-cU-Dzm" firstAttribute="height" secondItem="i5M-Pr-FkT" secondAttribute="height" multiplier="0.892857" id="Emg-BN-IKv"/>
                 <constraint firstItem="DF6-MR-v9I" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="LYo-DC-pqa"/>
                 <constraint firstItem="Ncc-cU-Dzm" firstAttribute="width" secondItem="i5M-Pr-FkT" secondAttribute="width" id="b4H-V1-PeE"/>
                 <constraint firstItem="DF6-MR-v9I" firstAttribute="bottom" secondItem="fnl-2z-Ty3" secondAttribute="bottom" id="bpF-fD-znn"/>
@@ -146,6 +146,7 @@
         </view>
     </objects>
     <resources>
+        <image name="image-placeholder" width="300" height="200"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

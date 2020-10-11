@@ -42,7 +42,8 @@ class OffersPresenterImp : OffersPresenter {
     
     func offerSelected(at indexPath: IndexPath) {
         let offerSelected = sections[indexPath.section].items[indexPath.row]
-        view?.presentDetailScene(with: offerSelected)
+        let dataFetcher = OfferDetailDataFetcher(url: offerSelected.detailURL)
+        view?.presentDetailScene(with: dataFetcher)
     }
     
     func configure(cell: OfferTableViewCell, at indexPath: IndexPath) {
