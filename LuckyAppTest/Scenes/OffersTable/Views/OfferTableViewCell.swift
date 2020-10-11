@@ -21,7 +21,7 @@ class OfferTableViewCell: UITableViewCell {
     @IBOutlet weak var tagsLabel: UILabel!
     
     func configure(brand : String) {
-        brandLabel.text = brand
+        brandLabel.text = brand.uppercased()
     }
     
     func configure(title : String) {

@@ -72,7 +72,7 @@ extension OfferDetailViewController : OfferDetailView {
     
     func configure(brand: String?) {
         let brand = brand ?? ""
-        brandLabel.text = brand
+        brandLabel.text = brand.uppercased()
     }
     
     func configure(favsCounter: Int?) {
@@ -107,7 +107,7 @@ extension OfferDetailViewController : OfferDetailView {
             let attributeString: NSMutableAttributedString =  NSMutableAttributedString(string: oldPrice)
                 attributeString.addAttribute(NSAttributedString.Key.strikethroughStyle,
                                              value: 2, range: NSMakeRange(0, attributeString.length))
-            oldPriceLabel.text = oldPrice
+            oldPriceLabel.attributedText = attributeString
         } else {
             oldPriceLabel.text = ""
         }
@@ -125,8 +125,8 @@ extension OfferDetailViewController : OfferDetailView {
     }
     
     func configure(redeptionCap: String?) {
-        let redeptionCap = redeptionCap ?? ""
-        redeptionCapsLabel.text = redeptionCap
+        let redeptionCap = redeptionCap?.uppercased() ?? ""
+        redeptionCapsLabel.text = "REDEPTION CAP : \(redeptionCap)"
     }
     
     
