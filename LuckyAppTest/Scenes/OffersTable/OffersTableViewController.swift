@@ -37,6 +37,8 @@ class OffersTableViewController: UIViewController {
     func registerCells() {
         tableView.register(UINib(nibName: "OfferTableViewCell", bundle: nil),
                            forCellReuseIdentifier: "cell")
+        tableView.register(OfferHeaderTableView.self,
+                                forHeaderFooterViewReuseIdentifier:"headerTitleView")
     }
 
 }
@@ -86,7 +88,23 @@ extension OffersTableViewController : UITableViewDataSource {
         presenter?.configure(cell: cell, at: indexPath)
         return cell
     }
+
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        
+        guard let view = tableView.dequeueReusableHeaderFooterView(withIdentifier: "headerTitleView")
+                as? OfferHeaderTableView
+        else {
+            return nil
+        }
+        
+        presenter?.configure(header: view, in: section)
+        
+        return view
+    }
     
-    
+    func tableView(_ tableView: UITableView,
+                   heightForHeaderInSection section: Int) -> CGFloat {
+        return 110.0
+    }
 }
 

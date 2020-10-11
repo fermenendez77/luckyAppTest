@@ -14,12 +14,12 @@ protocol OffersPresenter {
     func viewDidLoad()
     func offerSelected(at indexPath : IndexPath)
     func configure(cell : OfferTableViewCell, at indexPath : IndexPath)
-    
+    func configure(header : OfferHeaderTableView, in section : Int)
     var sections : [Section] {get set}
 }
 
 class OffersPresenterImp : OffersPresenter {
-    
+   
     weak var view : OffersView?
     let dataFetcher : OffersDataFetcher
     
@@ -45,6 +45,11 @@ class OffersPresenterImp : OffersPresenter {
         cell.configure(brand: offer.brand)
         cell.configure(favCount: offer.favoriteCount)
         cell.configure(tags: offer.tags)
+    }
+    
+    func configure(header: OfferHeaderTableView, in section: Int) {
+        let sectionModel = sections[section]
+        header.configure(title: sectionModel.title)
     }
     
 }
