@@ -149,6 +149,8 @@
 		139B4F9D25322BE200A822DF /* OffersTable */ = {
 			isa = PBXGroup;
 			children = (
+				138D6BD52534D8A10013DC70 /* OffersTableViewController.swift */,
+				138D6BD62534D8A10013DC70 /* OffersTableViewController.xib */,
 				139B4FA525322E3300A822DF /* Views */,
 				139B4F9F25322D0200A822DF /* OffersPresenter.swift */,
 				139B4FA225322DD900A822DF /* OffersDataFetcher.swift */,
@@ -162,8 +164,6 @@
 				13E3649525327BCC00C46BD8 /* OfferHeaderTableView.swift */,
 				13F45CC12532484F00C0F72A /* OfferTableViewCell.swift */,
 				13F45CC22532484F00C0F72A /* OfferTableViewCell.xib */,
-				138D6BD52534D8A10013DC70 /* OffersTableViewController.swift */,
-				138D6BD62534D8A10013DC70 /* OffersTableViewController.xib */,
 			);
 			path = Views;
 			sourceTree = "<group>";
