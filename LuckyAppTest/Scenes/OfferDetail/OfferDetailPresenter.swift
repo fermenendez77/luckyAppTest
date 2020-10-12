@@ -20,9 +20,9 @@ class OfferDetailPresenterImp : OfferDetailPresenter {
     var imageQueue : OperationQueue = OperationQueue()
     
     weak var view : OfferDetailView?
-    let dataFetcher : OfferDetailDataFetcher
+    var dataFetcher : OfferDetailDataFetcher
     
-    required init(view: OfferDetailView, dataFetcher: OfferDetailDataFetcher ) {
+    required init(view: OfferDetailView, dataFetcher: OfferDetailDataFetcher) {
         self.view = view
         self.dataFetcher = dataFetcher
         self.dataFetcher.delegate = self

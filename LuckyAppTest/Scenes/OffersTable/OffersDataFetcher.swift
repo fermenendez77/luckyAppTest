@@ -16,6 +16,7 @@ protocol OffersDataFetcherDelegate : class {
 protocol OffersDataFetcher {
     
     func fetchOffers()
+    var delegate : OffersDataFetcherDelegate? { get set }
 }
 
 class OffersDataFetcherImp : OffersDataFetcher {
@@ -25,7 +26,7 @@ class OffersDataFetcherImp : OffersDataFetcher {
     
     weak var delegate : OffersDataFetcherDelegate?
     
-    func fetchOffers() {
+    open func fetchOffers() {
         let restClient = RestClientService(urlBase: urlBase, scheme: .https)
         restClient.dataRequest(endpoint: endPoint,
                                method: .GET,

@@ -13,15 +13,22 @@ protocol OffersDetailFetcherDelegate : class {
     func error(error : ErrorData)
 }
 
+protocol OfferDetailDataFetcher {
+    
+    init(url : String)
+    func fetchOfferDetail()
+    var delegate : OffersDetailFetcherDelegate? { get set }
+}
 
-class OfferDetailDataFetcher {
+
+class OfferDetailDataFetcherImp : OfferDetailDataFetcher {
     
     let urlBase = "www.nasable.com"
     let endPoint : String
     
     weak var delegate : OffersDetailFetcherDelegate?
     
-    init(url : String) {
+    required init(url : String) {
         let offerURL = URL(string: url)!
         self.endPoint = offerURL.path
     }

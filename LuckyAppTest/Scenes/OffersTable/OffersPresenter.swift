@@ -10,7 +10,7 @@ import UIKit.UIImage
 
 protocol OffersPresenter {
     
-    init(view : OffersView, dataFetcher : OffersDataFetcherImp)
+    init(view : OffersView, dataFetcher : OffersDataFetcher)
     
     func viewDidLoad()
     func offerSelected(at indexPath : IndexPath)
@@ -22,7 +22,7 @@ protocol OffersPresenter {
 class OffersPresenterImp : OffersPresenter {
    
     weak var view : OffersView?
-    let dataFetcher : OffersDataFetcher
+    var dataFetcher : OffersDataFetcher
     
     var sections: [Section] = []
     
@@ -30,10 +30,10 @@ class OffersPresenterImp : OffersPresenter {
     internal var images : [IndexPath : UIImage] = [:]
     internal var pendingImagesOperations : [IndexPath : ImageDownloaderOperation] = [:]
     
-    required init(view: OffersView, dataFetcher: OffersDataFetcherImp = OffersDataFetcherImp()) {
+    required init(view: OffersView, dataFetcher: OffersDataFetcher = OffersDataFetcherImp()) {
         self.view = view
         self.dataFetcher = dataFetcher
-        dataFetcher.delegate = self
+        self.dataFetcher.delegate = self
     }
     
     func viewDidLoad() {
@@ -43,7 +43,7 @@ class OffersPresenterImp : OffersPresenter {
     
     func offerSelected(at indexPath: IndexPath) {
         let offerSelected = sections[indexPath.section].items[indexPath.row]
-        let dataFetcher = OfferDetailDataFetcher(url: offerSelected.detailURL)
+        let dataFetcher = OfferDetailDataFetcherImp(url: offerSelected.detailURL)
         view?.presentDetailScene(with: dataFetcher)
     }
     
