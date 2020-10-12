@@ -22,16 +22,17 @@ class OffersTableViewController: UIViewControllerDialogBehaviours {
     
     var presenter : OffersPresenter?
     
-    @IBOutlet var tableView : UITableView!
+    @IBOutlet weak var tableView: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         configureTableView()
-        presenter = OffersPresenterImp(view: self)
         presenter?.viewDidLoad()
     }
     
     func configureTableView() {
+        tableView.delegate = self
+        tableView.dataSource = self
         tableView.separatorStyle = .none
         registerCells()
     }
@@ -132,4 +133,5 @@ extension OffersTableViewController : UITableViewDataSource {
         return 104.0
     }
 }
+
 

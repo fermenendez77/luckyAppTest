@@ -19,16 +19,16 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "BF3261FC-AE1C-4BA3-A565-2F1EED822073"
+            uuid = "5AC9927A-7690-4075-847D-76F877E00905"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "LuckyAppTest/App/AppDelegate.swift"
+            filePath = "LuckyAppTest/Scenes/OffersTable/OffersTableViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "16"
-            endingLineNumber = "16"
-            landmarkName = "application(_:didFinishLaunchingWithOptions:)"
+            startingLineNumber = "28"
+            endingLineNumber = "28"
+            landmarkName = "viewDidLoad()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
