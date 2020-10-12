@@ -9,16 +9,19 @@
 import Foundation
 import UIKit.UIImage
 
-class ImageDownloaderOperation : Operation {
+class ImageDownloaderOperation : AsyncOperation {
     
     let url : URL
     var image : UIImage?
     
     init(withURL url : URL) {
         self.url = url
+        super.init()
     }
     
     override func main() {
+        defer { self.state = .finished }
+        
         if isCancelled {
             return
         }
